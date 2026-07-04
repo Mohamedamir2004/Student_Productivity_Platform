@@ -1,0 +1,161 @@
+:root{
+    --primary-color:rgba(242, 244 ,246 , 1);
+    --secondary-color:#2563EB;
+    --border-color:rgba(195, 198 , 215 , 1);
+    --navitem-hoverColor:rgba(230,232,234,1);
+    --text-color:#2d3133;
+    --light-blue-color:#f8fafc;
+    --primary-light-color:#dbe3ef;
+} 
+
+
+/* when clicking the element is convert into flex */
+#bmi-tab:checked ~ .tab-contents .bmi-content{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    /* gap: 32px; */
+}
+/* age sections */
+/* .age-calculators{
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    margin: 12px;
+} 
+.age-calculator{
+    display: flex;
+    flex-direction: column;
+    margin: 16px auto;
+    background-color: var(--white-background); 
+    color: var(--text-color);
+    padding: 16px;
+    border-radius: 12px;
+    width: 50%;
+    margin: 12px;
+    box-shadow: 0 0  12px var(--text-color);
+    border: 1px solid var(--primary-light-color);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+} */ 
+
+.bmi-calculator{
+    display: flex;
+
+}
+.bmi{
+    display: flex;
+    flex-direction: column;
+    margin: 16px auto;
+    background-color: var(--white-background);
+    color: var(--text-color);
+    padding: 16px;
+    border-radius: 12px;
+    width: 50%;
+    margin: 12px;
+    box-shadow: 0 0  12px var(--text-color);
+    border: 1px solid var(--primary-light-color);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+/* input sections */
+.form-control{
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    flex-direction: column;
+
+}
+/* inputs and labels  */
+.form-control > input , .form-control > label {
+    width: 100%;
+}
+.form-control > label{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 12px 0;
+}
+.form-control > input{
+    width: 100%;
+    /* padding: 16px; */
+    width: 100%;
+    padding: 12px; 
+    background-color: var(--light-blue-color);
+    outline: none;
+    border: 1px solid var(--primary-light-color);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 16px;
+    transition: 0.3s ease-in-out;
+    color: var(--text-color);
+}
+.form-control > button{
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    border: none;
+    outline: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--primary-light-color);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+    cursor: pointer;
+    width: 100%;
+    color: var(--white-background);
+    margin: 12px 0;
+} 
+
+.bmi-feedbacks{
+    width: 45%;
+    display: flex;
+    align-items: stretch;
+}
+.bmi-feedback{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text-color);
+    gap: 12px;
+    padding: 12px;
+    text-align: center;
+    background-color: var(--primary-color);
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 2px dotted var(--primary-light-color);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+    cursor: pointer;
+}
+
+/* result box */
+.result-boxes{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.result-boxes > .result-box{
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 12px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 12px;
+    color: var(--white-background);
+}
+.result-boxes > .result-box > span {
+    display: block;
+    line-height: 2.4rem;
+}
+
+.result-boxes > .result-box > span:first-of-type {
+    font-weight: 600;
+    font-size: 40px;
+}
+.result-boxes > .result-box > span:last-of-type {
+    font-weight: 500;
+    font-size: 16px;
+}

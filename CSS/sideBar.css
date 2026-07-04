@@ -1,0 +1,94 @@
+/* side bar */ 
+/* variables for color */
+:root{
+    --primary-color:rgba(242, 244 ,246 , 1);
+    --secondary-color:#2563EB;
+    --border-color:rgba(195, 198 , 215 , 1);
+    --navitem-hoverColor:rgba(230,232,234,1);
+    --text-color:#2d3133;
+}
+
+.sidebar{ 
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 18rem;
+    height: 100vh;
+    padding: 16px;
+    background-color: var(--primary-color); 
+    border-right:1px solid  var(--border-color); 
+    font-family: "Inter" , sans-serif;
+    line-height: 1.3rem;
+    z-index: 1000;
+}
+/* navbar icons  */
+.navbaricon{
+    display: none;
+}
+/* title */
+.maintitle{
+    color:var(--secondary-color);
+    padding: 12px 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+/* profile styles */ 
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 12px 0;
+}
+/* profile image */
+.profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+
+} 
+/* profile image near h2 , p style */
+.profile_role > h2{
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* nav item or sections */
+.navitem{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px ;
+    transition: background-color 0.3s ease-out;
+    margin-top: 4px;
+    cursor: pointer;
+    text-decoration: none; 
+    color: var(--text-color);
+}
+
+
+/* second navitems background color */
+.navitem:first-of-type{
+    background-color: rgba(211, 228, 254, 1);
+    color: var(--secondary-color);
+}
+/* inside a navitem 2nd span styles  */
+.navitem span:nth-of-type(2){
+    font-size: 16px;
+    font-weight: 400;
+} 
+/* hover proper for navitem */ 
+
+.navitem:hover{
+    background-color: var(--navitem-hoverColor);
+    color: #191c1e;
+}
+.navitem.active{
+    background-color: rgba(211, 228, 254, 1);
+    color: var(--white-background);
+}
+.navitem:active{
+    background-color: rgba(211, 228, 254, 1);
+    color: var(--white-background);
+}
+

@@ -1,0 +1,976 @@
+/* Responsive layout for StudentSync dashboard */
+
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    background-color: #f7f9fc;
+    color: #232a31;
+    font-family: "Inter", sans-serif;
+}
+
+img,
+canvas,
+svg,
+iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Layout helpers */
+.container {
+    width: min(1170px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 16px 40px rgba(20, 24, 44, 0.08);
+}
+
+/* Sidebar and main layout */
+.sidebar {
+    transition: width 0.3s ease, padding 0.3s ease;
+}
+
+main {
+    transition: margin-left 0.3s ease, padding 0.3s ease;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1180px) {
+    .tasknotes,
+    .weather,
+    .tasks,
+    .notes,
+    .waetheritems,
+    .weatherdatachanging,
+    .tasklistitem,
+    .tasklistcontents {
+        width: 100%;
+    }
+
+    .barcharts {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .weatherdatachangingtext,
+    .headtitles,
+    .taskappendcontents > h2,
+    .tasklistcompleted > h2 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 5rem;
+        padding: 14px 10px;
+    }
+
+    .navbaricon {
+        display: flex;
+        justify-content: center;
+        color: var(--secondary-color);
+        margin: 10px 0 18px;
+    }
+
+    .heading,
+    .profile_role,
+    .navitem span:nth-of-type(2) {
+        display: none;
+    }
+
+    .profile {
+        justify-content: center;
+        margin: 10px 0 18px;
+    }
+
+    .profile img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .navitem {
+        justify-content: center;
+        gap: 0;
+        padding: 12px 10px;
+    }
+
+    main {
+        margin-left: 5rem;
+        padding: 16px;
+    }
+
+    .headers {
+        gap: 14px;
+        padding: 10px 14px;
+    }
+
+    .search {
+        margin: 10px 0;
+    }
+
+    .search > input[type="text"] {
+        width: 100%;
+        padding: 14px 1rem 14px 3rem;
+    }
+
+    .headericons {
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    .headericon,
+    .headericon > img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .welcomepage,
+    .tasknotes,
+    .weather {
+        flex-direction: column;
+    }
+
+    .welcometime {
+        align-items: flex-start;
+        margin-top: 14px;
+    }
+
+    .tasks,
+    .notes,
+    .waetheritems,
+    .weatherdatachanging {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .notes,
+    .weatherdatachanging {
+        margin-top: 14px;
+    }
+
+    .weather {
+        margin: 14px 0;
+    }
+
+    .barcharts {
+        grid-template-columns: 1fr;
+        margin-right: 0;
+    }
+
+    .linechart,
+    .roundchart {
+        height: 360px;
+    }
+
+    body .headtitles {
+        margin: 18px 16px;
+    }
+
+    body .tasksinputs {
+        margin: 16px 16px;
+    }
+
+    body .tasksinputs > input[type="text"] {
+        margin: 12px 0;
+        padding: 18px 74px 18px 18px;
+    }
+
+    body .addbtn {
+        right: 12px;
+    }
+
+    body .tasklists {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 14px 16px;
+    }
+
+    body .tasklistitem,
+    body .tasklistcontents {
+        width: 100%;
+        padding: 0;
+    }
+
+    body .taskappenditems {
+        padding: 14px 0;
+    }
+
+    body .tasklisthead,
+    body .tasklistcompleted {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: auto;
+        padding: 12px 16px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(195, 198, 215, 1);
+    }
+
+    .navbaricon {
+        display: none;
+    }
+
+    .heading {
+        display: block;
+    }
+
+    .maintitle {
+        padding: 8px 0 12px;
+        font-size: 22px;
+    }
+
+    .profile {
+        display: none;
+    }
+
+    .navitems {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        scrollbar-width: none;
+    }
+
+    .navitems::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navitem {
+        flex: 0 0 auto;
+        min-width: 58px;
+        margin-top: 0;
+        border-radius: 10px;
+        padding: 12px 10px;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 18px 16px;
+    }
+
+    .headers {
+        position: static;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 0;
+    }
+
+    .searchitems {
+        flex: 1 1 100%;
+        order: 2;
+    }
+
+    .headericons {
+        width: 100%;
+        justify-content: flex-end;
+        order: 1;
+    }
+
+    .welcomepage {
+        padding: 18px 0;
+    }
+
+    .welcometitle {
+        line-height: 1.6rem;
+    }
+
+    .welcometitle > h2 {
+        font-size: 1.8rem;
+    }
+
+    .welcometitle > p {
+        margin-top: 8px;
+        font-size: 1rem;
+    }
+
+    .welcometime span:first-of-type {
+        font-size: 1.35rem;
+    }
+
+    .welcometime span:last-of-type {
+        font-size: 0.9rem;
+    }
+
+    .tasknotes {
+        padding: 8px 0;
+    }
+
+    .task {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .taskitem {
+        min-width: 0;
+        padding: 14px 8px;
+    }
+
+    .taskitem p {
+        overflow-wrap: break-word;
+    }
+
+    .taskitem > h2:first-of-type,
+    .noteitem > h2 {
+        font-size: 20px;
+    }
+
+    .toltip {
+        padding: 8px 14px;
+        white-space: nowrap;
+    }
+
+    .noteitemcard {
+        line-height: 1.7rem;
+    }
+
+    .noteitemcard > h5 {
+        font-size: 18px;
+    }
+
+    .weatherdata {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .weatherdatachanging {
+        border-left-width: 6px;
+    }
+
+    .weatherdatachangingtext {
+        font-size: 1.05rem;
+        line-height: 1.75rem;
+    }
+
+    .weatherdatachangingtext > section {
+        justify-content: flex-start;
+    }
+
+    .linechart,
+    .roundchart {
+        height: 300px;
+        padding: 10px;
+    }
+
+    body .headtitles {
+        margin: 12px 0;
+        font-size: 1.55rem;
+    }
+
+    body .tasksinputs {
+        margin: 10px 0;
+    }
+
+    body .tasksinputs > input[type="text"] {
+        padding: 16px 64px 16px 16px;
+        font-size: 0.98rem;
+    }
+
+    body .addbtn {
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        right: 10px;
+    }
+
+    body .tasklists {
+        padding: 10px 0;
+    }
+
+    body .tasklistitem,
+    body .tasklistcontents {
+        width: 100%;
+        padding: 0;
+    }
+
+    body .taskappenditems,
+    body .tasklistcompleted {
+        padding: 12px 0;
+    }
+
+    body .taskappendcontents {
+        min-width: 0;
+    }
+
+    body .taskappendcontents > h2,
+    body .tasklistcompleted > h2 {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+
+    body .taskappendcontents > span {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .maintitle {
+        font-size: 20px;
+    }
+
+    .navitem {
+        padding: 10px;
+    }
+
+    .headers {
+        padding: 8px 8px;
+    }
+
+    .headericon,
+    .headericon > img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .search > input[type="text"] {
+        padding: 12px 12px 12px 2.8rem;
+        font-size: 0.95rem;
+    }
+
+    .welcometitle > h2 {
+        font-size: 1.45rem;
+    }
+
+    .task {
+        flex-direction: column;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(195, 198, 215, 1);
+    }
+
+    .task:last-child {
+        border-bottom: 0;
+    }
+
+    .taskitem {
+        width: 100%;
+        padding: 8px 4px;
+    }
+
+    .taskitem:nth-child(2) {
+        padding-left: 22px;
+    }
+
+    .toltip {
+        font-size: 12px;
+    }
+
+    .noteitemcard,
+    .weatherdatachanging,
+    .waetheritems,
+    .tasks,
+    .notes {
+        padding: 10px;
+    }
+
+    .weatheritem {
+        align-items: flex-start;
+    }
+
+    .weatheritemdata > h2 {
+        font-size: 28px;
+    }
+
+    .weatherimages > span {
+        font-size: 58px;
+    }
+
+    .weatherdatachangingnumber {
+        font-size: 20px;
+    }
+
+    .weatherdatachangingtext {
+        text-align: left;
+    }
+
+    .weatherdatachangingtext > section {
+        justify-content: flex-start;
+    }
+
+    .linechart,
+    .roundchart {
+        height: 260px;
+    }
+
+    body .headtitles {
+        font-size: 1.35rem;
+    }
+
+    body .tasksinputs > input[type="text"] {
+        padding: 13px 52px 13px 12px;
+    }
+
+    body .addbtn {
+        width: 40px;
+        height: 40px;
+    }
+
+    body .addbtn > span {
+        font-size: 22px;
+    }
+
+    body .tasksheadtitles {
+        gap: 8px;
+    }
+
+    body .taskheadtitle,
+    body .sortlist {
+        gap: 8px;
+    }
+
+    body .sortlist > span:last-of-type {
+        font-size: 0.9rem;
+    }
+
+    body .taskappenditem,
+    body .tasklistcompleted {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    body .taskappenditem > input[type="checkbox"],
+    body .tasklistcompleted > input[type="checkbox"] {
+        flex: 0 0 16px;
+        margin-top: 3px;
+    }
+
+    body .tasklisthead > h2 {
+        font-size: 1.15rem;
+    }
+
+    body .tasklisthead > p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive overrides for quiz and calculator pages */
+
+@media (max-width: 1180px) {
+    .quiz-containers {
+        min-width: auto;
+        max-width: 100%;
+        padding: 0 18px;
+    }
+
+    .quiz-headings {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .quiz-content {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .quiz-content > .quiz-content-types {
+        width: 100%;
+    }
+
+    .quiz-contentquestions > h2 {
+        font-size: 28px;
+    }
+
+    .quiz-content-choices {
+        gap: 10px;
+    }
+
+    .quiz-content-choice {
+        min-width: 0;
+    }
+
+    .quiz-content-submit {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .quiz-content-submit-btn > button {
+        width: 100%;
+    }
+
+    .calculations {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tab-buttons {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .quiz-containers {
+        padding: 0 14px;
+    }
+
+    .quiz-headings {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .quiz-heading-question,
+    .quiz-heading-score {
+        width: 100%;
+    }
+
+    .quiz-content {
+        padding: 16px;
+    }
+
+    .quiz-contentquestions > h2 {
+        font-size: 26px;
+    }
+
+    .quiz-content-choice {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .quiz-content-choice > p {
+        flex: 1 1 100%;
+        margin: 0;
+    }
+
+    .quiz-content-submit {
+        gap: 10px;
+    }
+
+    .quiz-content-submit-btn {
+        width: 100%;
+    }
+
+    .calculators-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .calculators,
+    .calculators-contents,
+    .age-calculator,
+    .age-contents-data,
+    .bmi,
+    .bmi-feedbacks {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .calculators {
+        padding: 16px;
+    }
+
+    .calculator-buttons {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .calculator-buttons > button.equals {
+        grid-row: auto;
+    }
+
+    .tab-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-button {
+        padding: 14px 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    .quiz-contentquestions > h2 {
+        font-size: 22px;
+    }
+
+    .quiz-content > .quiz-content-types {
+        font-size: 15px;
+    }
+
+    .quiz-content-choices {
+        gap: 12px;
+    }
+
+    .calculator-buttons {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .calculator-buttons > button.zero,
+    .calculator-buttons > .equals {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .age-calculators,
+    .bmi-calculator {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .age-content-data,
+    .bmi-feedback {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-containers {
+        padding: 0 12px;
+    }
+
+    .quiz-headings {
+        gap: 8px;
+    }
+
+    .quiz-content {
+        padding: 14px;
+    }
+
+    .quiz-contentquestions > h2 {
+        font-size: 20px;
+    }
+
+    .tab-buttons {
+        gap: 8px;
+    }
+
+    .tab-button {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .calculator-buttons {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .calculator-buttons > button.zero,
+    .calculator-buttons > button.equals {
+        grid-column: span 2;
+    }
+
+    .age-calculator,
+    .bmi {
+        padding: 14px;
+    }
+
+    .age-content-data,
+    .bmi-feedback {
+        padding: 12px;
+    }
+}
+
+/* bmi calculations  */
+/* BMI result box + calculator tab overflow fix */
+@media (max-width: 992px) {
+  .calculations {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .tab-buttons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .tab-button {
+    min-width: 0;
+  }
+
+  .tab-button > label {
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .calculators-content,
+  .age-content,
+  .bmi-content,
+  .calculators,
+  .calculator-content,
+  .age-calculator,
+  .age-contents-data,
+  .bmi,
+  .bmi-feedbacks,
+  .result-boxes {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .calculators,
+  .age-calculator,
+  .bmi {
+    margin: 0 0 16px 0 !important;
+    padding: 16px !important;
+  }
+
+  .calculators-content,
+  .age-content,
+  .bmi-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .bmi-feedbacks {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .result-boxes {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .result-boxes > .result-box {
+    min-width: 0 !important;
+  }
+
+  .age-calculators,
+  .bmi-calculator {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .tab-buttons {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .tab-button {
+    min-width: 0 !important;
+  }
+
+  .tab-contents > section {
+    display: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #calculator-tab:checked ~ .tab-contents .calculators-content,
+  #age-tab:checked ~ .tab-contents .age-content,
+  #bmi-tab:checked ~ .tab-contents .bmi-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  #calculator-tab:checked ~ .tab-buttons .tab-button:first-of-type,
+  #age-tab:checked ~ .tab-buttons .tab-button:nth-of-type(2),
+  #bmi-tab:checked ~ .tab-buttons .tab-button:last-of-type {
+    color: var(--secondary-color) !important;
+    background-color: var(--white-background) !important;
+    border-bottom-color: var(--secondary-color) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .calculator-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .calculator-buttons > button.zero,
+  .calculator-buttons > button.equals {
+    grid-column: span 2 !important;
+    width: 100% !important;
+  }
+
+  .bmi-feedback,
+  .age-content-data,
+  .age-contents-data,
+  .bmi-feedbacks {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .tab-buttons {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .tab-button > label {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .quiz-content {
+    padding: 14px !important;
+  }
+
+  .quiz-contentquestions > h2 {
+    font-size: 20px !important;
+  }
+}
+
+/* Tab content display override for calculator / age / BMI tabs */
+.tab-contents > section {
+  display: none !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+#calculator-tab:checked ~ .tab-contents .calculators-content,
+#age-tab:checked ~ .tab-contents .age-content,
+#bmi-tab:checked ~ .tab-contents .bmi-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+#calculator-tab:checked ~ .tab-buttons .tab-button:first-of-type,
+#age-tab:checked ~ .tab-buttons .tab-button:nth-of-type(2),
+#bmi-tab:checked ~ .tab-buttons .tab-button:last-of-type {
+  color: var(--secondary-color) !important;
+  background-color: var(--white-background) !important;
+  border-bottom-color: var(--secondary-color) !important;
+}

@@ -1,0 +1,117 @@
+ :root{
+ --primary-color:rgba(242, 244 ,246 , 1);
+    --secondary-color:#2563EB;
+    --border-color:rgba(195, 198 , 215 , 1);
+    --navitem-hoverColor:rgba(230,232,234,1);
+    --text-color:#2d3133;
+    --toltip-color:#c2d6ff;
+    --white-background:#fff;
+    
+}
+.timersections{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.timersection{
+    padding: 24px;
+    background-color: var(--white-background);
+    border: 1px solid var(--border-color); 
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    min-width: 400px;
+    margin: 12px auto;
+
+}
+
+/* timer sections */
+.timer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* timing title */
+.timingtitle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.timingfunctions{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+/* timng title styles */
+.timingtitle > h2 , .timingtitle > span{
+    font-size: 18px;
+    font-weight: 500;
+}
+/* each timing functions */
+.timingfunction{
+    background-color: var(--primary-color); 
+    padding: 8px 24px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+.timersections:first-of-type{
+    margin-left: 12px;
+}
+
+/* timing  */
+.timingloadings{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 24px auto;
+    border: 4px solid var(--secondary-color);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+.timingloading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 2rem;
+}
+.timingloading > span:first-of-type{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+/* action button */
+.timingbuttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+.timingbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    padding: 24px;
+    cursor:pointer;
+    transition: background-color 0.3s ease-in-out , color 0.3s ease-in-out ;
+}
+.timingbutton:nth-of-type(2){
+    background-color: var(--secondary-color);
+    color: var(--white-background);
+} 
+.timingbutton:not(.timingbutton:nth-of-type(2)):active{
+    background-color: var(--toltip-color);
+    color: var(--white-background);
+}
+.timingbutton:nth-of-type(2):active{
+    background-color: var(--secondary-dark-color);
+    color: var(--text-color); 
+
+}
+
+

@@ -1,0 +1,89 @@
+:root{
+    --primary-color:rgba(242, 244 ,246 , 1);
+    --secondary-color:#2563EB;
+    --border-color:rgba(195, 198 , 215 , 1);
+    --navitem-hoverColor:rgba(230,232,234,1);
+    --text-color:#2d3133;
+}
+main{
+    /* positions is fixed for sidebar so that overhide so unhide using the margin-left */
+    margin-left: 18rem;
+}
+/* headers */
+.headers{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding: 2px 12px;
+    z-index: 1000;
+}
+/* search of sections */
+.search{
+    position: relative; 
+    margin: 8px 12px;
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    transition:  transform 0.3s ease-in-out;
+
+}
+/* hover for search include input , sapn */
+.search:hover{
+    transform: translateY(-4px);
+}
+/* select the search input */
+.search > input[type="text"]{
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    padding: 12px 3rem;
+    color: var(--text-color);
+    outline: none;
+    border: none;
+    transition: outline 0.3s ease-in-out , transform 0.3s ease-in-out;
+    &:focus{
+        border: none;
+        outline: 2px solid var(--secondary-color);
+    }
+}
+
+
+/* search icon */
+.search >span{
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translate(50%,-50%);
+    color: var(--text-color);
+}
+
+/* headericons notification , darkmode */
+.headericons{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: 12px;
+}
+/* headericon */ 
+/* each icons style */
+.headericon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.headericon:hover{
+    background-color: var(--primary-color);
+}
+
+/* image inside a headericon */
+.headericon > img{
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+}

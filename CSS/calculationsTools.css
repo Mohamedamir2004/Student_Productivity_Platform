@@ -1,0 +1,96 @@
+/* common css is implementing */  
+
+:root{
+    --primary-color:rgba(242, 244 ,246 , 1);
+    --secondary-color:#2563EB;
+    --border-color:rgba(195, 198 , 215 , 1);
+    --navitem-hoverColor:rgba(230,232,234,1);
+    --text-color:#2d3133;
+} 
+
+/* path of destinationns styles like tools > calculator */ 
+.pathofdestinations{
+    padding: 16px;
+    color: var(--text-color); 
+    font-size: 1rem;
+    font-weight: 500;
+} 
+.pathofdestinations > span:first-of-type , .pathofdestinations > span:last-of-type{
+    cursor: pointer;
+}
+.pathofdestinations span:nth-of-type(2){
+    font-size: 12px; 
+    font-weight: 600;
+}
+.pathofdestinations > span:last-of-type{
+    color: var(--secondary-color);
+} 
+
+/*  calculator section main */
+.calculations{
+    margin: 16px auto;
+    width: 100%;
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color); 
+    border-radius: 8px;
+} 
+
+/* calculations actions buttons */
+input[type="radio"]{
+    display: none;
+} 
+/* tab buttions sections */
+.tab-buttons{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    background-color: #f1f5f9; 
+    border-bottom: 1px solid var(--border-color);
+}
+.tab-button{ 
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 3px solid transparent; 
+    transition: all 0.3s ease-in-out;
+    
+}
+/* icons amd text same align */
+.tab-button > label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+}
+.tab-button span{
+    margin-right: 8px;
+} 
+
+/* if clicked other buttons is hide and other content also hide  */
+#calculator-tab:checked ~ .tab-buttons  .tab-button:first-of-type ,
+#age-tab:checked ~ .tab-buttons  .tab-button:nth-of-type(2) ,
+#bmi-tab:checked ~ .tab-buttons  .tab-button:last-of-type{
+    color: var(--secondary-color); 
+    background-color: var(--white-background);
+    border-bottom-color: var(--secondary-color);
+}
+/* all contents is none */
+.tab-contents > section {
+    padding: 12px;
+    display: none;
+} 
+#calculator-tab:checked  ~ .tab-contents .calculators-content{
+    display: block;
+}
+#age-tab:checked  ~ .tab-contents .age-content{
+    display: block;
+}
+#bmi-tab:checked  ~ .tab-contents .bmi-content{
+    display: block;
+}
+
+
+

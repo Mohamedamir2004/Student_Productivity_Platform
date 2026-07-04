@@ -1,0 +1,251 @@
+/* this is part for weather part in weather.html */ 
+/* first all same in index.html */
+/* but i add a button in  */
+:root{
+    --primary-color:rgba(242, 244 ,246 , 1);
+    --secondary-color:#2563EB;
+    --border-color:rgba(195, 198 , 215 , 1);
+    --navitem-hoverColor:rgba(230,232,234,1);
+    --text-color:#2d3133;
+    --toltip-color:#c2d6ff;
+    --secondary-dark-color:#1747b8;
+    
+}
+.additem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 4px 0; 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out , color  0.3s ease-in-out ;
+}
+.additem:hover{
+    background-color: var(--toltip-color);
+    color: var(--text-color);
+}
+
+/* weather head titles */
+.weatherhead{
+    color: var(--text-color);
+    text-align: justify;
+    margin: 16px;
+    line-height: 1.5rem;
+}
+.weatherhead > h1{
+    font-size: 32px;
+    font-weight: 800;
+}
+.weatherhead > p{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* weather sections */
+.weathersections{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    overflow: hidden;
+}
+.weathersection{
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 10px var(--primary-color);
+    margin: 16px auto; 
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    min-width: 0;
+
+}
+/* search input sections */
+.weathersearch{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+.search{
+    position: relative; 
+    margin: 8px 12px;
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    transition:  transform 0.3s ease-in-out;
+
+}
+/* hover for search include input , sapn */
+.search:hover{
+    transform: translateY(-4px);
+}
+/* select the search input */
+.search > input[type="text"]{
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    padding: 12px 3rem;
+    color: var(--text-color);
+    outline: none;
+    border: none;
+    transition: outline 0.3s ease-in-out , transform 0.3s ease-in-out;
+    &:focus{
+        border: none;
+        outline: 2px solid var(--secondary-color);
+    }
+}
+
+
+/* search icon */
+.search >span{
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translate(50%,-50%);
+    color: var(--text-color);
+}
+/* button serach */
+.weathersearch > button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 4px 0; 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out , color  0.3s ease-in-out ;
+}
+.weathersearch > button:hover{
+    background:var(--secondary-dark-color);
+}
+/* weathertitle location , data styles */
+.weathersectionstitles{
+    border-bottom: 1px solid var(--border-color);
+    margin: 12px ;
+    padding: 12px;
+    line-height: 1.5rem;
+}
+.weathersectionslocation {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: justify;
+
+} 
+.weathersectionslocation > h2{
+    font-size: 28px;
+    font-weight: 600;
+}
+.weathersectionslocation > p{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.weathersectionslocation > p > span:first-of-type{
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+/* weather data  */
+.weathersectionsdatas{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-align: left;
+}
+.weathersectionsdatas > h2{
+    font-size: 44px;
+    font-weight: 600;
+}
+.weathersectiondata > h3{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* weather autual data in tables */
+.autualweatherdata{
+    width: calc(100% - 32px);
+    border-collapse: collapse;
+}
+.autualweatherdata tr{
+    padding: 16px 32px;
+    line-height: 1.5rem;
+    
+}
+.autualweatherdata td{
+    padding: 16px 32px;
+    text-align: center;
+}
+/* align the cloumn text center , right , left */
+.autualweatherdata td:first-of-type{
+    text-align: left;
+}
+.autualweatherdata td:nth-of-type(2){
+    text-align: center;
+}
+.autualweatherdata td:last-of-type{
+    text-align: right;
+    white-space: nowrap;
+}
+/* icons in tables */
+.autualweatherdata td:nth-child(2) > .material-symbols-outlined {
+    vertical-align: middle;
+}
+
+
+/* autual data */
+/* good or huminity styles */
+.weatherdatas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    background-color: var(--primary-color); 
+    padding: 16px;
+    margin: 12px 0;
+    border-radius: 12px;
+}
+.weatherdata{
+    padding: 8px 24px;
+    line-height: 1.5rem;
+    font-size: 12px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+.weatherdata > h2{
+    font-size: 24px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+.weatherdata:not(.weatherdata:last-of-type){
+    border-right: 2px solid var(--border-color);
+}
+/* good */
+/* select last section and select last h2 */
+.weatherdata:last-of-type > h2:last-of-type{
+    color: #2563EB;
+}
+

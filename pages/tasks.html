@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Productivity Platform</title>
+    <!-- for SEO optimizing -->
+    <meta name="description" content="This page is mainly focus on the Student Productivity">
+    <meta name="author" content="Mohamed Amir">
+    <meta name="keywords" content="HTML , CSS , JavaScript ">
+    <!-- favicons -->
+    <link rel="shortcut icon" href="../Assets/Image/faviIcons.png" type="image/x-icon">
+    <!-- google icons  -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- google font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- reset css -->
+    <link rel="stylesheet" href="../CSS/resetcss.css">
+    <!-- common css -->
+    <link rel="stylesheet" href="../CSS/commonCSS.css">
+    <!-- side bar css -->
+    <link rel="stylesheet" href="../CSS/sideBar.css">
+    <!-- header css -->
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
+
+    <!-- tasks css -->
+    <link rel="stylesheet" href="../CSS/tasks.css">
+</head>
+
+<body>
+    <!-- side bar -->
+    <!-- 27-06-2026 in this day build a side bar -->
+    <aside class="sidebar">
+        <span class="material-symbols-outlined navbaricon">
+            filter_list
+        </span>
+        <section class="heading">
+            <h1 class="maintitle">StudentSync</h1>
+        </section>
+
+        <section class="profile">
+            <img src="../Assets/Image/profileImage.png" alt="Profile Image" class="avator" width="100" height="100">
+            <section class="profile_role">
+                <h2>Mohamed Amir</h2>
+                <span>Full Stack Developer</span>
+            </section>
+        </section>
+        <nav class="navitems">
+            <a class="navitem" href="/">
+                <span class="material-symbols-outlined">
+                    dashboard
+                </span>
+                <span>Dashborad</span>
+            </a>
+            <a class="navitem" href="./tasks.html">
+                <span class="material-symbols-outlined">
+                    check_circle
+                </span>
+                <span>Tasks</span>
+            </a>
+            <!-- <a class="navitem" href="./notes.html">
+                <span class="material-symbols-outlined">
+                    description
+                </span>
+                <span>Notes</span>
+            </a> -->
+            <a class="navitem" href="./calculator.html">
+                <span class="material-symbols-outlined">
+                    calculate
+                </span>
+                <span>Calculator</span>
+            </a>
+            <a class="navitem" href="./quiz.html">
+                <span class="material-symbols-outlined">
+                    quiz
+                </span>
+                <span>Quiz</span>
+            </a>
+            <a class="navitem" href="./weather.html">
+                <span class="material-symbols-outlined">
+                    cloud
+                </span>
+                <span>Weather</span>
+            </a>
+            <a class="navitem" href="./timer.html">
+                <span class="material-symbols-outlined">
+                    timer
+                </span>
+                <span>Timer</span>
+            </a>
+            <a class="navitem" href="./setting.html">
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+                <span>Setting</span>
+            </a>
+        </nav>
+    </aside>
+    <!-- main content -->
+    <main>
+        <!-- header -->
+        <header class="headers">
+            <section class="searchitems">
+                <section class="search">
+                    <input type="text" name="search" required placeholder="Search Notes , tasks">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </section>
+            </section>
+            <section class="headericons">
+                <section class="headericon">
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+                </section>
+                <section class="headericon">
+                    <span class="material-symbols-outlined">
+                        dark_mode
+                    </span>
+                </section>
+                <section class="headericon">
+                    <img src="../Assets/Image/profileImage.png" alt="profile Image" srcset="">
+                </section>
+            </section>
+        </header>
+
+        <!-- sections tasks title and inputs  -->
+        <section class="headtitles">
+            <h2>Tasks</h2>
+        </section>
+
+        <!-- inputs  -->
+        <section class="tasksinputs">
+            <input type="text" id="addinput" placeholder="What need to Today">
+            <section class="addbtn">
+                <span class="material-symbols-outlined">
+                    add
+                </span>
+            </section>
+        </section>
+
+        <!-- task added  -->
+        <section class="tasklists">
+            <section class="tasklistitem">
+                <!-- first titles -->
+                <section class="tasksheadtitles">
+                    <section class="taskheadtitle">
+                        <h2>Upcoming</h2>
+                        <span>4</span>
+                    </section>
+                    <section class="sortlist">
+                        <span class="material-symbols-outlined">
+                            sort
+                        </span>
+                        <span>Sort by Data</span>
+                        <section class="sortlistitem">
+                            <span>Completed</span>
+                            <span>Pending</span>
+                            <!-- <span>on Going</span> -->
+                        </section>
+                    </section>
+                </section>
+                <!-- tasklist items -->
+                <section class="taskappenditems">
+                    <section class="taskappenditem">
+                        <input type="checkbox" class="appendinputs">
+                        <section class="taskappendcontents">
+                            <h2>Submit methodology draft for review</h2>
+                            <span class="material-symbols-outlined">
+                                calendar_today
+                            </span>
+                            <span>Today, 5:00 PM </span> <span>Research</span>
+                        </section>
+                    </section>
+                    <section class="taskappenditem">
+                        <input type="checkbox" class="appendinputs">
+                        <section class="taskappendcontents">
+                            <h2>Analyze data set from Survey-B</h2>
+                            <span class="material-symbols-outlined">
+                                calendar_today
+                            </span>
+                            <span>Tomorrow </span> <span>Analysis</span>
+                        </section>
+                    </section>
+                    <section class="taskappenditem">
+                        <input type="checkbox" class="appendinputs">
+                        <section class="taskappendcontents">
+                            <h2>Library meeting with Dr. Sarah</h2>
+                            <span class="material-symbols-outlined">
+                                calendar_today
+                            </span>
+                            <span>M Oct 28, 10:30 AM</span> <span>Meeting</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="tasklistcontents">
+                <section class="tasklistcontent">
+                    <section class="tasklisthead">
+                        <h2>
+                            Completed
+                        </h2>
+                        <p>Clear All</p>
+                    </section>
+                    <section class="tasklistcompleted">
+                        <input type="checkbox" class="appendinputs">
+                        <h2>Purchase lab equipment reagents</h2>
+                    </section>
+                    <section class="tasklistcompleted">
+                        <input type="checkbox" class="appendinputs">
+                        <h2>Register for winter symposium</h2>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+    </main>
+    <!-- task script  -->
+    <script src="../JS/tasks.js"></script>
+    <!-- common js  -->
+    <script src="../JS/common.js"></script>
+</body>
+
+</html>

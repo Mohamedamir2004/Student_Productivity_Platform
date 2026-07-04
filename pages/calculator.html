@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Productivity Platform</title>
+    <!-- for SEO optimizing -->
+    <meta name="description" content="This page is mainly focus on the Student Productivity">
+    <meta name="author" content="Mohamed Amir">
+    <meta name="keywords" content="HTML , CSS , JavaScript ">
+    <!-- favicons -->
+    <link rel="shortcut icon" href="../Assets/Image/faviIcons.png" type="image/x-icon">
+    <!-- google icons  -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- google font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- reset css -->
+    <link rel="stylesheet" href="../CSS/resetcss.css">
+    <!-- common css -->
+    <link rel="stylesheet" href="../CSS/commonCSS.css">
+    <!-- side bar css -->
+    <link rel="stylesheet" href="../CSS/sideBar.css">
+    <!-- header css -->
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
+
+    <!-- calculators css -->
+    <link rel="stylesheet" href="../CSS/calculationsTools.css">
+    <link rel="stylesheet" href="../CSS/calculators.css"> 
+    <link rel="stylesheet" href="../CSS/agecalculator.css">
+    <link rel="stylesheet" href="../CSS/bmi-calculator.css">
+   
+</head>
+
+<body>
+    <!-- side bar -->
+    <!-- 27-06-2026 in this day build a side bar -->
+    <aside class="sidebar">
+        <span class="material-symbols-outlined navbaricon">
+            filter_list
+        </span>
+        <section class="heading">
+            <h1 class="maintitle">StudentSync</h1>
+        </section>
+
+        <section class="profile">
+            <img src="../Assets/Image/profileImage.png" alt="Profile Image" class="avator" width="100" height="100">
+            <section class="profile_role">
+                <h2>Mohamed Amir</h2>
+                <span>Full Stack Developer</span>
+            </section>
+        </section>
+        <nav class="navitems">
+            <a class="navitem" href="/">
+                <span class="material-symbols-outlined">
+                    dashboard
+                </span>
+                <span>Dashborad</span>
+            </a>
+            <a class="navitem" href="./tasks.html">
+                <span class="material-symbols-outlined">
+                    check_circle
+                </span>
+                <span>Tasks</span>
+            </a>
+            <!-- <a class="navitem" href="./notes.html">
+                <span class="material-symbols-outlined">
+                    description
+                </span>
+                <span>Notes</span>
+            </a> -->
+            <a class="navitem" href="./calculator.html">
+                <span class="material-symbols-outlined">
+                    calculate
+                </span>
+                <span>Calculator</span>
+            </a>
+            <a class="navitem" href="./quiz.html">
+                <span class="material-symbols-outlined">
+                    quiz
+                </span>
+                <span>Quiz</span>
+            </a>
+            <a class="navitem" href="./weather.html">
+                <span class="material-symbols-outlined">
+                    cloud
+                </span>
+                <span>Weather</span>
+            </a>
+            <a class="navitem" href="./timer.html">
+                <span class="material-symbols-outlined">
+                    timer
+                </span>
+                <span>Timer</span>
+            </a>
+            <a class="navitem" href="./setting.html">
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+                <span>Setting</span>
+            </a>
+        </nav>
+    </aside>
+    <!-- main content -->
+    <main>
+        <!-- header -->
+        <header class="headers">
+            <section class="searchitems">
+                <section class="search">
+                    <input type="text" name="search" required placeholder="Search Notes , tasks">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </section>
+            </section>
+            <section class="headericons">
+                <section class="headericon">
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+                </section>
+                <section class="headericon">
+                    <span class="material-symbols-outlined">
+                        dark_mode
+                    </span>
+                </section>
+                <section class="headericon">
+                    <img src="../Assets/Image/profileImage.png" alt="profile Image" srcset="">
+                </section>
+            </section>
+        </header>
+
+
+        <!-- calculator and age calculators , BMI calculators  -->
+
+        <section class="pathofdestinations">
+            <span>Tools</span>
+            <span class="material-symbols-outlined">
+                arrow_forward_ios
+            </span>
+            <span>Calculators</span>
+        </section>
+
+        <!-- calculator sections -->
+        <section class="calculations">
+            <input type="radio" name="calculations-tab" id="calculator-tab">
+            <input type="radio" name="calculations-tab" id="age-tab">
+            <input type="radio" name="calculations-tab" id="bmi-tab">
+            <section class="tab-buttons">
+                
+                <section class="tab-button">
+                    <label for="calculator-tab">
+                        <span class="material-symbols-outlined">
+                            calculate
+                        </span>
+                        Calculator
+                    </label>
+                </section>
+
+                <section class="tab-button">
+                    <label for="age-tab">
+                        <span class="material-symbols-outlined">
+                            monitor_weight
+                        </span>
+                        Age Calculator
+                    </label>
+                </section>
+
+
+                <section class="tab-button">
+                    <label for="bmi-tab">
+                        <span class="material-symbols-outlined">
+                            event
+                        </span>
+                        BMI Calculator
+                    </label>
+                </section>
+            </section>
+            <!-- tab-contents  -->
+            <section class="tab-contents">
+                <section class="calculators-content">
+                    
+                    <!-- calculator -->
+                    <section class="calculators">
+                        <section class="calculator">
+                            <section class="calculator-input">
+                                <input type="text" id="input">
+                            </section>
+                            <section class="calculator-buttons">
+                                <button type="button" class="ac-controls">
+                                    <span>Ac</span>
+                                </button>
+                                <button type="button" class="operation">
+                                    <span>&divide;</span> 
+                                </button>
+                                <button type="button" class="operation">
+                                    <span>*</span> <!--multiple-->
+                                </button>
+
+                                <button type="button" class="controls">
+                                    <span>7</span>
+                                </button>
+                                <button type="button" class="controls">
+                                    <span>8</span>
+                                </button>
+                                <button type="button" class="controls">
+                                    <span>9</span>
+                                </button>
+                                <button type="button" class="operation">
+                                    <span>&minus;</span>  <!--minus-->
+                                </button>
+
+                                
+                                <button type="button" class="controls">
+                                    <span>4</span>
+                                </button>
+                                <button type="button" class="controls">
+                                    <span>5</span>
+                                </button>
+                                <button type="button" class="controls">
+                                    <span>6</span>
+                                </button>
+                                <button type="button" class="operation">
+                                    <span>&plus;</span> 
+                                </button> 
+
+
+                                <button type="button" class="controls">
+                                    <span>1</span>
+                                </button>
+                                <button type="button" class="controls">
+                                    <span>2</span>
+                                </button>
+                                <button type="button" class="controls">
+                                    <span>3</span>
+                                </button>
+                                <button type="button" class="operation equals">
+                                    <span>&equals;</span> 
+                                </button>
+
+
+                                <button type="button" class="controls zero">
+                                    <span>0</span>
+                                </button>
+                                <button type="button" class="controls">
+                                    <span>.</span>
+                                </button>
+                                
+                            </section>
+                        </section>
+                        
+                    </section>
+                    <sectionn class="calculators-contents">
+                        <section class="calculator-content">
+                            <section class="contenttitles">
+                                <h2>Scientific Precision</h2>
+                                <span>
+                                    Optimized for quick academic calculations with floating-point
+                                    precision. Integrated history tracking allows for audit-ready
+                                    results.
+                                </span>
+                            </section>
+                            <section class="feedbacks">
+                                <section class="feedback">
+                                    <span>STATUS</span>
+                                    <span></span>
+                                    <h3>System Active</h3>
+                                </section>
+                                <section class="feedback">
+                                    <span> MODE</span>
+                                    <h3>Standard Decimal  </h3>   
+                                </section>
+                            </section>
+                        </section>
+                        
+
+
+
+
+                    </sectionn>
+                </section>
+                <section class="age-content">
+                    <section class="age-calculators">
+                        <section class="age-calculator">
+                            <section class="age">
+                                <label for="date">Date Of Birth</label>
+                                <input type="date"  id="date">
+                            </section>
+                            <section class="age-button">
+                                <button type="button">Calculate Age</button>
+                            </section>
+                            <section class="age-feedback">
+                                <span class="material-symbols-outlined">
+                                    info
+                                </span>
+                                <span>Calculates precise age based on UTC time.</span>
+                            </section>
+                        </section>
+                        <section class="age-contents-data">
+                            <section class="age-content-data">
+                                <span class="material-symbols-outlined">
+                                    cake
+                                </span>
+                                <span>
+                                    Select your birth date to calculate exact age
+                                </span>
+                                <section class="result-boxes">
+                                    <section class="result-box">
+                                        <span>21 </span>
+                                    <span>Years</span>
+                                    </section>
+                                    <section class="result-box">
+                                        <span>10 </span>
+                                    <span>Months</span>
+                                    </section>
+                                    <section class="result-box">
+                                        <span>15 </span>
+                                    <span>Days</span>
+                                    </section>
+                                </section>
+                            </section> 
+                        </section>
+                    </section>
+                </section>
+                <section class="bmi-content">
+                    <section class="bmi-calculator">
+                        <section class="bmi">
+                            <section class="form-control">
+                                <label for="height">Height (CM)</label>
+                                <input type="number" name="" id="height">
+                            </section>
+                            <section class="form-control">
+                                <label for="weight">Weight (CM)</label>
+                                <input type="number" name="" id="weight">
+                            </section> 
+                            <section class="form-control">
+                                <button type="button" >Calculate BMI</button>
+                            </section>
+                        </section>
+                        <section class="bmi-feedbacks">
+                            <section class="bmi-feedback">
+                                <span class="material-symbols-outlined">
+                                    cake
+                                </span>
+                                <span>
+                                    Enter your Height and Weight  to see the results
+                                </span>
+                                <section class="result-boxes">
+                                    <section class="result-box">
+                                        <span>21 </span>
+                                    <span>Years</span>
+                                    </section>
+                                    <section class="result-box">
+                                        <span>10 </span>
+                                    <span>Months</span>
+                                    </section>
+                                    <section class="result-box">
+                                        <span>15 </span>
+                                    <span>Days</span>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section> 
+
+    </main>
+    <!-- common js  -->
+    <script src="../JS/common.js"></script>
+<!-- calculators js -->
+    <script src="../JS/calculator.js"></script>
+    <!-- age calculator -->
+    <script src="../JS/age-calculator.js"></script> 
+    <!-- bmi calculator -->
+    <script src="../JS/bmi-calculator.js"></script> 
+    <!-- common js -->
+    <script src="../JS/common.js"></script>
+
+</body>
+
+</html>

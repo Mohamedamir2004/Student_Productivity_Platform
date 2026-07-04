@@ -1,0 +1,316 @@
+/* tasks styles head */
+:root{
+    --primary-color:rgba(242, 244 ,246 , 1);
+    --secondary-color:#2563EB;
+    --border-color:rgba(195, 198 , 215 , 1);
+    --navitem-hoverColor:rgba(230,232,234,1);
+    --text-color:#2d3133;
+    --toltip-color:#c2d6ff;
+    --secondary-dark-color:#1747b8;
+    
+} 
+
+/* task head titles */
+.headtitles{
+    margin: 16px 12px;
+    color: var(--text-color);
+    font-size: 2rem; 
+    font-weight: 600;
+}
+
+/* taskinputsections */
+.tasksinputs{
+    position: relative;
+    /* width:calc(100%-47px); */
+    margin: 16px 24px;
+    display: flex;
+    box-sizing: border-box;
+
+
+}
+.tasksinputs > input[type="text"]{
+    background-color: var(--white-background); 
+    outline: none;
+    border: 2px solid var(--border-color);
+    width: 100%;
+    padding: 24px; 
+    border-radius: 12px;
+    margin: 12px 24px;
+    transition: 0.3s ease-in-out;
+    box-sizing: border-box;
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+.tasksinputs > input[type="text"]:focus , .tasksinputs > input[type="text"]:active ,.tasksinputs > input[type="text"]:checked  {
+    border: none;
+    outline: 2px solid var(--secondary-color);
+
+}
+.addbtn{
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: var(--white-background); 
+    padding: 16px 12px;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.addbtn > span{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--white-background);
+}
+
+/* task main content */
+/* task section */
+.tasklists{
+    display: flex;
+    align-items: center;
+    padding: 12px;
+} 
+/* first sections */
+.tasklistitem{
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+
+}
+/* first section inside a headtitles */
+.tasksheadtitles{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    width: 100%; 
+    border-radius: 8px;
+    
+}
+.taskheadtitle , .sortlist{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.sortlist{
+    position: relative;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+}
+.taskheadtitle > h2{
+    font-size: 24px;
+    font-weight: 600;
+}
+.taskheadtitle > span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 8px;
+    background-color: var(--primary-color); 
+    border-radius: 12px;
+    font-weight: 500;
+}
+/* sort by items style  */
+.sortlistitem{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 140px;
+    margin-top: 8px;
+    z-index: 10;
+    transition: 0.3s ease-in-out;
+    /* line-height: 1.2rem; */
+    background-color: var(--primary-color);
+    padding: 8px 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    flex-direction: column;
+    
+}
+/* .sortlist:hover .sortlistitem , .sortlist:active .sortlistitem{
+    display: flex;
+}  */
+.sortlistitem.active{
+    display: flex;
+}
+.sortlistitem > span{
+    display: block;
+    padding: 8px 12px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.sortlistitem > span:hover{
+    background-color: var(--navitem-hoverColor);
+}
+
+
+/* task append items */
+.taskappenditems{
+    width: 100%;
+    padding: 16px;
+}
+.taskappenditem{
+    background-color: var(--white-background);
+    padding: 16px;
+    border: 2px solid var(--border-color);
+    margin: 12px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.2rem;
+} 
+
+/* input check box style */
+.taskappenditem>input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    /* behaviour is erased like clicked  */
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1.5px solid #d1d5db;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.taskappenditem>input[type="checkbox"]:focus {
+    outline: 3px solid #bfdbfe;
+    outline-offset: 1px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #2563EB;
+    border-color: #2563EB;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+}
+
+.taskappenditem>input[type="checkbox"]:active,
+.taskappenditem>input[type="checkbox"]:focus-visible {
+    outline-offset: 1px;
+    outline: 2px solid #bfdbfe;
+}
+
+
+/* task append content styles */
+.taskappendcontents{
+    line-height: 1.5rem;
+}
+.taskappendcontents > h2{
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.taskappendcontents > span {
+    font-size: 14px;
+    font-weight: 500;
+}
+.taskappenditem:first-of-type .taskappendcontents > span:first-of-type , .taskappenditem:first-of-type .taskappendcontents > span:nth-of-type(2)  {
+    color: var(--secondary-color);
+}
+.taskappendcontents > span:last-of-type{
+    background-color: var(--primary-color);
+    padding: 4px 8px;
+    margin: 12px 0;
+    font-size: 12px;
+    font-weight: 500;
+}
+/* completed items  */
+.tasklistcontents{
+    width: 40%;
+    /* background-color: #1747b8; */
+}
+.tasklistcontent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/* task list completed head styles */
+.tasklisthead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 12px 8px;
+}
+.tasklisthead > h2{
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+
+}
+.tasklisthead > p{
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* task completd list  */
+.tasklistcompleted {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: justify;
+    margin: 12px 8px;
+    background-color: var(--primary-color);
+    padding: 16px;
+    width: 100%;
+}
+/* input check box style */
+.tasklistcompleted>input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    /* behaviour is erased like clicked  */
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1.5px solid #d1d5db;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.tasklistcompleted>input[type="checkbox"]:focus {
+    outline: 3px solid #bfdbfe;
+    outline-offset: 1px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #2563EB;
+    border-color: #2563EB;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+}
+
+.tasklistcompleted>input[type="checkbox"]:active,
+.tasklistcompleted>input[type="checkbox"]:focus-visible {
+    outline-offset: 1px;
+    outline: 2px solid #bfdbfe;
+}
+
+.tasklistcompleted > h2{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
