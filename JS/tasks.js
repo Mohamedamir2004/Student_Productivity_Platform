@@ -35,7 +35,7 @@ const date = day.toLocaleDateString("en-US" ,
 
 // stores todos as 
 
-let todos = [
+let defaultTodos = [
     {
         title: "Submit methodology draft for review",
         time:  `${date} , ${time}` ,
@@ -63,7 +63,20 @@ let todos = [
         completed: true
     }
 ]
-
+// get data from local storage 
+const STORAGE_KEY = "todos"
+const getData = ()=>{
+    const savedTodos = localStorage.getItem(STORAGE_KEY) 
+    if(savedTodos){
+        return JSON.parse(savedTodos)
+    }
+    return defaultTodos
+} 
+// save the data on local storage
+const loadData = (tasks)=>{
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(tasks))
+}
+let todos = getData()
 const addTodos = (pending="pending")=>{ 
 
     // in static i will erase because i will append so already append then erase in broeswer 
@@ -103,7 +116,8 @@ const addTodos = (pending="pending")=>{
         const checkBox = task.querySelector("input")
         checkBox.addEventListener("change",()=>{
             todo.completed = checkBox.checked // true or false 
-            console.log(todo)
+            // console.log(todo) 
+            loadData(todos)
             addTodos()
 })
     }) 
@@ -139,14 +153,18 @@ const completedAddTodos = (completedTodos) =>{
         const checkBox = taskCompletedSection.querySelector("input") 
         checkBox.addEventListener("change",()=>{
             todo.completed = checkBox.checked // true or false 
+            loadData(todos)
             addTodos()
 }) 
 const clearAll = document.querySelector(".tasklisthead > p") 
-clearAll.addEventListener("click",()=>{
+    if(clearAll){
+        clearAll.addEventListener("click",()=>{
         todos = todos.filter((todo)=> !todo.completed) 
+        loadData(todos)
         addTodos()
     })
 
+    }
     }) 
 }
 addbtn.addEventListener("click",()=>{
@@ -184,6 +202,7 @@ addbtn.addEventListener("click",()=>{
         }
     )
     userInput.value = ""
+    loadData(todos)
     addTodos()
 })
 // filter data 
